@@ -5,7 +5,10 @@ ONLY FOR USE UNDER WEB OWNER AUTORIZATION
 
 ## Requeriments
 GO installed 
+
 [Install instructions](https://go.dev/doc/install)
+
+You can also install on Mac with Brew `brew install go`
   
 ## How to use
 
