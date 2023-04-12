@@ -1,7 +1,7 @@
 # WebStresser
 A GO web app to test a web petitions limit. 
 
-ONLY FOR USE UNDER WEB OWNER AUTORIZATION 
+ONLY FOR USE UNDER WEB OWNER AUTHORISATION 
 
 ## Requeriments
 GO installed 
@@ -15,6 +15,6 @@ You can also install on Mac with Brew `brew install go`
 Dowload repo and on folder run: 
 
 ```
-URL_BASE=<father endpoint to test> INTERVAL=<betwen petitions on milliseconds> go run .
+URL_BASE=<father endpoint to test> INTERVAL=<betwen requests on milliseconds> go run .
 ```
 
