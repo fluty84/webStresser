@@ -1,7 +1,7 @@
 # WebStresser
 A GO web app to test a web petitions limit. 
 
-ONLY FOR USE UNDER WEB OWNER AUTHORISATION 
+ONLY FOR USE UNDER WEB OWNER AUTHORIZATION 
 
 ## Requeriments
 GO installed 
